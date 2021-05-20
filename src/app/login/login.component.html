@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="login-form" [formGroup]="formLogin">
+    <mat-form-field>
+      <mat-label>Usuario</mat-label>
+      <input matInput type = "text" placeholder="Ingresa nombre" formControlName ="username" [errorStateMatcher]="matcher" />
+      <mat-error *ngIf = "formLogin.get('username')?.errors?.email && !formLogin.get('username')?.errors?.required">
+        Ingresa un e-mail válido
+      </mat-error>
+      <mat-error *ngIf = "formLogin.get('username')?.hasError('required')">
+        Ingresa usuario es requerido
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput type = "password" placeholder="Contraeña" formControlName ="password" [errorStateMatcher]="matcher" />
+      <mat-error *ngIf = "formLogin.get('password')?.errors?.minlength && !formLogin.get('password')?.hasError('required')">
+        La contraseña debe ser mayor a 3 caracteres
+      </mat-error>
+      <mat-error *ngIf = "formLogin.get('password')?.hasError('required')">
+        La contraseña es requerida
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color = "primary" (click)="login()" [disabled]="formLogin.invalid">Ingresa</button>
+  </div>
+</div>
