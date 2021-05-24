@@ -11,6 +11,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FormularioDeContactoComponent } from './formulario-de-contacto/formulario-de-contacto.component'
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { MueblesComponent } from './muebles/muebles.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatTableModule} from '@angular/material/table';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -18,7 +24,9 @@ import { FormularioDeContactoComponent } from './formulario-de-contacto/formular
     AppComponent,
     LoginComponent,
     FormularioDeContactoComponent,
-    FormularioDeContactoComponent
+    FormularioDeContactoComponent,
+    HomeComponent,
+    MueblesComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,11 @@ import { FormularioDeContactoComponent } from './formulario-de-contacto/formular
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatProgressBarModule,
+    MatTableModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

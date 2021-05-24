@@ -1,0 +1,27 @@
+<div class="container">
+  <div class = "contact-form" [formGroup]="formContact">
+    <h1> {{title}} </h1>
+    <mat-form-field>
+      <mat-label>Tipo de tela</mat-label>
+      <input matInput type = "text" placeholder="Ej. Mezclilla" formControlName = "tipoTela" [errorStateMatcher]="matcher"/>
+      <mat-error *ngIf = "formContact.get('tipoTela')?.errors?.required">
+        El tipo de tela es requerido
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Marca</mat-label>
+      <input matInput type = "text" placeholder="Ej. Muebles trocoso" formControlName = "marca" [errorStateMatcher]="matcher"/>
+      <mat-error *ngIf = "formContact.get('marca')?.errors?.required">
+        La marca es requerida
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Tipo de mueble</mat-label>
+      <input matInput type="text" placeholder="Silla/Sala/.etc" formControlName = "tipo" [errorStateMatcher]="matcher"/>
+      <mat-error *ngIf = "formContact.get('tipo')?.errors?.required">
+        Es necesario que ingrese el tipo de mueble que es
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color = "primary" (click)="save()" [disabled]="formContact.invalid || disableButton">Guardar</button>
+  </div>
+</div>
